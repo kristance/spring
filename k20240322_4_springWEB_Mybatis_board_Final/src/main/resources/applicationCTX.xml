@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- MvcboardVO 클래스의 bean을 만든다. -->
+	<bean id="mvcboardVO" class="com.tjoeun.springWEB_DBCP_board.vo.MvcboardVO"/>
+	<!-- MvcboardList 클래스의 bean을 만든다. -->
+	<bean id="mvcboardList" class="com.tjoeun.springWEB_DBCP_board.vo.MvcboardList"/>
+
+</beans>

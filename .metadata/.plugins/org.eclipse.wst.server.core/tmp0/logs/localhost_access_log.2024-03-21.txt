@@ -1,0 +1,4 @@
+127.0.0.1 - - [21/Mar/2024:11:28:45 +0900] "GET / HTTP/1.1" 404 807
+127.0.0.1 - - [21/Mar/2024:11:28:46 +0900] "GET /springWEB_DBCPTemplate_board/ HTTP/1.1" 302 -
+127.0.0.1 - - [21/Mar/2024:11:28:46 +0900] "GET /springWEB_DBCPTemplate_board/list HTTP/1.1" 200 9566
+127.0.0.1 - - [21/Mar/2024:11:28:47 +0900] "GET /favicon.ico HTTP/1.1" 404 818

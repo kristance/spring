@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- 
+		정적 파일(image, css, js 등)의 위치한 경로를 지정한다.
+		주소창에 요청이 들어오면 @Controller 어노테이션을 붙여준 클래스(컨트롤러)의 @RequestMapping 어노테이션의 인수로 지정된 내용을
+		검색해서 메소드를 실행하지만, 예외적으로 아래와 같이 <resources> 태그에서 mapping 속성에 지정된 요청이 들어오면
+		컨트롤러 클래스의 @RequestMapping 어노테이션을 검색하지 않고 location 속성에 지정된 경로로 탐색한다. 
+	-->
+	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/image/**" location="/WEB-INF/image/" /> <!-- image 파일 탐색 경로 설정-->
+	<resources mapping="/css/**" location="/WEB-INF/css/" /> <!-- css 파일 탐색 경로 설정 -->
+	<resources mapping="/js/**" location="/WEB-INF/js/" /> <!-- js 파일 탐색 경로 설정 -->
+	
+
+	<!-- 
+		컨트롤러 클래스의 @RequestMapping 어노테이션이 붙어있는 메소드가 리턴하는 view 페이지 앞, 뒤에 자동으로 붙여질 
+		내용을 설정한다.
+		@RequestMapping 어노테이션이 붙은 메소드가 리턴하는 view 페이지 이름이 "home"이라면 앞에는 prefix의 value 속성값인
+		"/WEB-INF/views/"을 붙여주고, 뒤에 suffix의 value 속성값인 ".jsp"를 붙여서 view 페이지의 경로와 이름을 완성한다.
+		prefix + view 페이지 이름 + suffix -> "/WEB-INF/views/home" + "home" + ".jsp" -> "/WEB-INF/views/home.jsp"
+		
+	 -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	
+	<!-- 프로젝트를 생성할 때 입력한 패키지를 프로젝트의 base-package로 지정한다. -->
+	<!-- base-package의 @Controller 어노테이션이 붙어있는 클래스를 컨트롤러로 사용한다. -->
+	<context:component-scan base-package="com.tjoeun.springWEB_sample" />
+	
+	
+	
+</beans:beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	
+	<!-- 
+		xml 파일에서 bean을 설정할 때 properties 파일의 내용을 읽어오려면 context Namespace를 추가하고 
+		<context:property-placeholder/> 태그의 location 속성에 읽어들일 properties 파일을 지정한다. 
+	 -->
+	<context:property-placeholder location="classpath:/admin.properties, classpath:/sub_admin.properties"/>
+		
+	
+	<!-- bean을 설정할 때 properties 파일의 내용을 가져오려면 ${key} 형태로 가져온다. -->
+	<bean id="adminConnection" class="com.tjoeun.springProperties_xml.AdminConnection">
+		<property name="adminId" value="${admin.id}" />
+		<property name="adminPw" value="${admin.pw}" />
+		<property name="sub_adminId" value="${sub_admin.id}" />
+		<property name="sub_adminPw" value="${sub_admin.pw}" />
+	</bean>
+	
+	
+	
+	
+</beans>

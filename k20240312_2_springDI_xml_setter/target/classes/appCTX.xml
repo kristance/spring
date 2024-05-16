@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- BMICalculator 클래스의 기본 생성자 실행으로 초기화됨 -->
+	<bean id="bmiCalculator" class="com.tjoeun.springDI_xml_setter.BMICalculator" />
+	
+	<bean id="myinfo" class="com.tjoeun.springDI_xml_setter.Myinfo">
+		<property name="name" value="루피" />
+		<property name="height" value="157.8" />
+		<property name="weight" value="59.0" />
+		<!-- ArrayList로 생성한 객체를 초기화하려면 <list> 태그로 <value> 태그를 묶어서 초기화시킨다. -->
+		<property name="hobbies">
+			<list>
+				<value>놀기</value>
+				<value>달리기</value>
+				<value>산책</value>
+			</list>
+		</property>
+		
+		<property name="bmiCalculator" ref="bmiCalculator" />
+	</bean>
+	
+	
+	
+	
+
+</beans>

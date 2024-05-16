@@ -1,0 +1,5 @@
+
+3월 18, 2024 10:28:26.773 NEW SESSION
+3월 18, 2024 10:28:26.773 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 18, 2024 10:28:27.358 [10440:2308:0318/102827.358:ERROR:corrupted_extension_reinstaller.cc(83)] Corrupted extension eimadpbcbfnmbkopoojfekhnkhdbieeh reinstalled with latency 3.08717 s
+3월 18, 2024 10:28:32.114 [10440:2308:0318/102832.114:ERROR:extension_host.cc(429)] Received EventAck for extension aapbdbdomjkkjkaonfhkkikfgjllcleb for an unknown event.
